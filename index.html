@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="si">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>බුද්ධ ධර්ම ප්‍රචාරය</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Sinhala:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: 'Noto Sans Sinhala', sans-serif;
+      background-color: #f9fafb;
+      color: #111827;
+      margin: 0;
+    }
+    header {
+      background-color: #1e293b;
+      color: white;
+      padding: 2rem 1rem;
+      text-align: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    nav {
+      background-color: #e2e8f0;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      padding: 1rem;
+    }
+    nav a {
+      text-decoration: none;
+      color: #1e293b;
+      font-weight: bold;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+    nav a:hover {
+      background-color: #cbd5e1;
+    }
+    main {
+      max-width: 960px;
+      margin: auto;
+      padding: 2rem 1rem;
+    }
+    section {
+      margin-bottom: 3rem;
+      background: white;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    h2 {
+      border-bottom: 2px solid #cbd5e1;
+      padding-bottom: 0.5rem;
+      margin-bottom: 1rem;
+    }
+    .deshana-list {
+      list-style: none;
+      padding: 0;
+    }
+    .deshana-list li {
+      margin-bottom: 1rem;
+    }
+    .deshana-list a {
+      color: #2563eb;
+      font-weight: 500;
+      text-decoration: none;
+    }
+    .deshana-list a:hover {
+      text-decoration: underline;
+    }
+    iframe {
+      width: 100%;
+      height: 315px;
+      border: none;
+      border-radius: 8px;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+    input, textarea {
+      padding: 0.75rem;
+      margin-bottom: 1rem;
+      border: 1px solid #d1d5db;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+    button {
+      background-color: #2563eb;
+      color: white;
+      padding: 0.75rem;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #1d4ed8;
+    }
+    .social-links a {
+      margin-right: 1rem;
+      color: #2563eb;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    footer {
+      background-color: #1e293b;
+      color: white;
+      text-align: center;
+      padding: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    @media (max-width: 600px) {
+      nav {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>බුද්ධ ධර්ම ප්‍රචාරය</h1>
+    <p>ධර්මය හැමෝටම – නිවන් මග සෙවීම සදහා</p>
+  </header>
+
+  <nav>
+    <a href="#about">අපි ගැන</a>
+    <a href="#deshana">දේශනා</a>
+    <a href="#live">Live</a>
+    <a href="#donate">පින්කම</a>
+    <a href="#contact">සම්බන්ධ වන්න</a>
+  </nav>
+
+  <main>
+    <section id="about">
+      <h2>අපි ගැන</h2>
+      <p>මෙම වෙබ් අඩවිය බුදුන් වහන්සේගේ අමිල ධර්මය ව්‍යාප්ත කිරීම සඳහා කැපවූ භික්ෂු සංඝයා හා ලාඛුසංඝයන්ගේ සහයෝගයෙන් ක්‍රියාත්මක වේ.</p>
+    </section>
+
+    <section id="deshana">
+      <h2>නවතම ධර්ම දේශනා</h2>
+      <ul class="deshana-list">
+        <li><a href="https://www.youtube.com/watch?v=abcd1234" target="_blank">කන්තලේ පඤ්ඤාසිරි හිමි - සත්ධර්මය</a></li>
+        <li><a href="https://www.youtube.com/watch?v=efgh5678" target="_blank">දෙරණ ධර්ම දේශනා 2024</a></li>
+      </ul>
+    </section>
+
+    <section id="live">
+      <h2>සජීවී ධර්ම දේශනා</h2>
+      <iframe src="https://www.youtube.com/embed/live_stream?channel=YOUR_CHANNEL_ID" allowfullscreen></iframe>
+    </section>
+
+    <section id="donate">
+      <h2>පින්කම සඳහා</h2>
+      <p>ඔබේ පින්කමෙන් අපගේ ධර්ම දේශනා වැඩසටහන් අඛණ්ඩව පවත්වාගෙන යා හැක. </p>
+      <p><a href="https://www.paypal.com/donate?hosted_button_id=YOUR_BUTTON_ID" target="_blank">මෙතැනින් දායක වන්න</a></p>
+    </section>
+
+    <section id="contact">
+      <h2>අප හා සම්බන්ධ වන්න</h2>
+      <form>
+        <input type="text" placeholder="ඔබේ නම" required>
+        <input type="email" placeholder="විද්‍යුත් තැපෑල" required>
+        <textarea placeholder="පණිවිඩය" required></textarea>
+        <button type="submit">යවන්න</button>
+      </form>
+      <div class="social-links">
+        <p>අපගේ සමාජ ජාල:</p>
+        <a href="https://facebook.com/YOUR_PAGE" target="_blank">Facebook</a>
+        <a href="https://youtube.com/@YOUR_CHANNEL" target="_blank">YouTube</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 බුද්ධ ධර්ම ප්‍රචාරය. සියලු හිමිකම් ඇවිරිණි.</p>
+  </footer>
+</body>
+</html>

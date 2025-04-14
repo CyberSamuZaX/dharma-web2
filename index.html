@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="si">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>බෞද්ධ ධර්මය - ලිපි</title>
+    <style>
+        :root {
+            --primary-color: #8B4513;
+            --secondary-color: #D2B48C;
+            --accent-color: #4CAF50;
+            --text-color: #333;
+            --light-bg: #FFF8E1;
+            --dark-bg: #5D4037;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Noto Sans Sinhala', Arial, sans-serif;
+        }
+        
+        body {
+            background-color: var(--light-bg);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1rem;
+            text-align: center;
+            position: relative;
+        }
+        
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+        
+        nav {
+            background-color: var(--dark-bg);
+            display: flex;
+            justify-content: center;
+            padding: 0.5rem;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        nav ul li {
+            margin: 0 0.5rem;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            background-color: var(--accent-color);
+        }
+        
+        .article-container {
+            max-width: 1000px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .article {
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--secondary-color);
+        }
+        
+        .article:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        
+        .article-header {
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+        
+        .article-title {
+            color: var(--primary-color);
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .article-meta {
+            color: #777;
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+        
+        .article-image {
+            width: 100%;
+            height: 300px;
+            background-size: cover;
+            background-position: center;
+            margin-bottom: 1.5rem;
+            border-radius: 8px;
+        }
+        
+        .article-content h2 {
+            color: var(--primary-color);
+            margin: 1.5rem 0 1rem;
+            font-size: 1.5rem;
+        }
+        
+        .article-content p {
+            margin-bottom: 1rem;
+            text-align: justify;
+        }
+        
+        .article-content ul, .article-content ol {
+            margin-left: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .article-content li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .article-quote {
+            background-color: var(--light-bg);
+            padding: 1.5rem;
+            border-left: 4px solid var(--accent-color);
+            margin: 1.5rem 0;
+            font-style: italic;
+        }
+        
+        .article-content .highlight {
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+        
+        .back-to-articles {
+            display: block;
+            text-align: center;
+            margin: 2rem 0;
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        .back-to-articles:hover {
+            text-decoration: underline;
+        }
+        
+        footer {
+            background-color: var(--dark-bg);
+            color: white;
+            padding: 2rem 1rem;
+            text-align: center;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            color: var(--secondary-color);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+        }
+        
+        .footer-links a:hover {
+            color: var(--secondary-color);
+        }
+        
+        .copyright {
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        /* Mobile responsiveness */
+        @media (max-width: 768px) {
+            .article-container {
+                padding: 1rem;
+            }
+            
+            .article-title {
+                font-size: 1.5rem;
+            }
+            
+            .article-image {
+                height: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">බෞද්ධ ධර්මය</div>
+        <p>නිවන් මග පෙන්වන තොරතුරු හා මාර්ගෝපදේශය</p>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="index.html">මුල් පිටුව</a></li>
+            <li><a href="dharma.html" class="active">ධර්මය</a></li>
+            <li><a href="sutras.html">සූත්‍ර</a></li>
+            <li><a href="meditation.html">භාවනා</a></li>
+            <li><a href="learning.html">ඉගෙනුම</a></li>
+            <li><a href="history.html">ඉතිහාසය</a></li>
+            <li><a href="qa.html">ප්‍රශ්න සහ පිළිතුරු</a></li>
+            <li><a href="contact.html">අප අමතන්න</a></li>
+        </ul>
+    </nav>
+    
+    <div class="article-container">
+        <!-- First Article -->
+        <article id="four-noble-truths" class="article">
+            <div class="article-header">
+                <h1 class="article-title">චතුරාර්ය සත්‍යය ගැන සරල හැඳින්වීමක්</h1>
+                <div class="article-meta">ප්‍රකාශිත දිනය: 2025 අප්‍රේල් 10 | ලේඛක: වෙනෙහෙර ධම්ම</div>
+            </div>
+            
+            <div class="article-image" style="background-image: url('/api/placeholder/1000/400');"></div>
+            
+            <div class="article-content">
+                <p>බුදුන් වහන්සේ විසින් දේශනා කරන ලද චතුරාර්ය සත්‍යය නම් වූ මූලික ඉගැන්වීම් හතර ගැන සරල විග්‍රහයක් මෙන්න. මෙම ඉගැන්වීම් බුද්ධාගමේ මූලික හරය ලෙස සැලකේ.</p>
+                
+                <h2>දුක්ඛ සත්‍යය - දුක පිළිබඳ සත්‍යය</h2>
+                
+                <p>ජීවිතයේ පවතින දුක, වේදනාව, අසතුට හා අතෘප්තිමත් බව පිළිබඳ සත්‍යයයි. බුද්ධාගමේ "දුක්ඛ" යන්න හුදෙක් ශාරීරික හෝ මානසික වේදනාවටම සීමා නොවේ. එය ඊට වඩා පුළුල් අර්ථයකින් පැවසෙන්නකි. ජරා, ව්‍යාධි, මරණ, අප්‍රියයන් සමග එක්වීම, ප්‍රියයන්ගෙන් වෙන්වීම, කැමති දේ නොලැබීම යන සියල්ල දුක්ඛයට අයත් වේ.</p>
+                
+                <p>සරලව කිවහොත්, අනිත්‍ය වූ ලෝකයක තෘෂ්ණාවෙන් බැඳී සිටීම නිසා මිනිසා අත්විඳින අසහනය, අතෘප්තිය, හා නොසන්සුන් බව දුක්ඛයයි.</p>
+                
+                <p>මෙම සත්‍යය අවබෝධ කර ගැනීමෙන් යථාර්ථය පිළිගැනීමට අපට අවස්ථාව ලැබෙනවා. දුක්ඛය පිළිගැනීම පළමු පියවරයි.</p>
+                
+                <h2>සමුදය සත්‍යය - දුක්ඛයේ හේතුව පිළිබඳ සත්‍යය</h2>
+                
+                <p>දුක්ඛයේ සම්භවය හෝ හේතුව පිළිබඳ සත්‍යයයි. එනම්, තෘෂ්ණාව හෝ දැඩි ආශාවයි. "තණ්හා" ලෙස හැඳින්වෙන මෙය තුන් ආකාරයකි:</p>
+                
+                <ul>
+                    <li><strong>කාම තණ්හා</strong> - චංචල සුඛ විඳීමේ ආශාව</li>
+                    <li><strong>භව තණ්හා</strong> - පැවැත්මේ හෝ දිගටම ජීවත්වීමේ ආශාව</li>
+                    <li><strong>විභව තණ්හා</strong> - නැතිවීමේ හෝ විනාශවීමේ ආශාව</li>
+                </ul>
+                
+                <p>ආශාව හෝ තෘෂ්ණාව, අනිත්‍ය වූ දේවල් මත බැඳීම නිසා දුක හටගනී. අප යමක් කෙරෙහි ආශාවෙන් බැඳී සිටින විට, එය වෙනස් වන විට හෝ නැති වන විට දුක් විඳීමට සිදුවේ.</p>
+                
+                <div class="article-quote">
+                    <p>"යම් තාක් තණ්හාව ඇත්තේද, එතාක් දුක ඇත. යම් තාක් දුක ඇත්තේද, එතාක් තණ්හාව ඇත."</p>
+                </div>
+                
+                <h2>නිරෝධ සත්‍යය - දුක්ඛය නිරෝධය පිළිබඳ සත්‍යය</h2>
+                
+                <p>තෘෂ්ණාව සම්පූර්ණයෙන්ම නැති කිරීම තුළින් දුක නිරෝධය වන බව පිළිබඳ සත්‍යයයි. මෙයින් නිවන හෝ නිර්වාණය අදහස් කෙරේ. "නිබ්බාන" යනු ගින්න නිවී යාමයි. එනම් ලෝභ, ද්වේෂ, මෝහ නැමැති කෙලෙස් ගින්න නිවී යාමයි.</p>
+                
+                <p>නිවන යනු:</p>
+                <ul>
+                    <li>තෘෂ්ණාවේ පූර්ණ අවසානය</li>
+                    <li>සියලු දුක්ඛයන්ගේ නිරෝධය</li>
+                    <li>සම්පූර්ණ නිදහස හා සාමය</li>
+                    <li>මනසේ අවසන් විමුක්තිය</li>
+                </ul>
+                
+                <p>මෙය හුදෙක් න්‍යායාත්මක සංකල්පයක් නොව, සෑම බෞද්ධයෙකුගේම අරමුණ විය යුතු ප්‍රායෝගික ඉලක්කයයි.</p>
+                
+                <h2>මාර්ග සත්‍යය - දුක්ඛ නිරෝධගාමිනී පටිපදා සත්‍යය</h2>
+                
+                <p>දුක්ඛය නිරෝධය කරා යන මාර්ගය පිළිබඳ සත්‍යයයි. මෙය ආර්ය අෂ්ටාංගික මාර්ගය ලෙස හැඳින්වේ. මෙම මාර්ගය අංග 8 කින් සමන්විත වේ:</p>
+                
+                <ol>
+                    <li><strong>සම්මා දිට්ඨි</strong> - නිවැරදි දැක්ම (චතුරාර්ය සත්‍යය අවබෝධය)</li>
+                    <li><strong>සම්මා සංකප්ප</strong> - නිවැරදි අදහස් (නෛෂ්ක්‍රම්‍ය, අහිංසා, අද්වේෂ)</li>
+                    <li><strong>සම්මා වාචා</strong> - නිවැරදි වචන (බොරු කීම, කෙලෙසා කථා, පරුෂ වචන, හිස් වචන වලින් වැළකීම)</li>
+                    <li><strong>සම්මා කම්මන්ත</strong> - නිවැරදි ක්‍රියා (ප්‍රාණඝාත, සොරකම, කාමය වැරදි ලෙස භාවිතය යන දේවලින් වැළකීම)</li>
+                    <li><strong>සම්මා ආජීව</strong> - නිවැරදි ජීවිකාව (යහපත් හා අහිංසක වෘත්තීන්)</li>
+                    <li><strong>සම්මා වායාම</strong> - නිවැරදි වීර්යය (අකුසල් දුරු කිරීම සහ කුසල් වැඩීමට දරන උත්සාහය)</li>
+                    <li><strong>සම්මා සති</strong> - නිවැරදි සිහිය (කය, වේදනා, සිත, ධර්මතා පිළිබඳ සතිමත් බව)</li>
+                    <li><strong>සම්මා සමාධි</strong> - නිවැරදි සමාධිය (මනස එක්තැන් කිරීම)</li>
+                </ol>
+                
+                <p>මෙම මාර්ගය සීල, සමාධි, ප්‍රඥා යන තුන් කොටසකට බෙදා දක්වන්නට පුළුවන්. සරලව කිවහොත්:</p>
+                <ul>
+                    <li><span class="highlight">සීල</span> - සදාචාරාත්මක හැසිරීම</li>
+                    <li><span class="highlight">සමාධි</span> - මානසික එකඟතාවය</li>
+                    <li><span class="highlight">ප්‍රඥා</span> - ප්‍රඥාවන්ත දැක්ම</li>
+                </ul>
+                
+                <h2>නිගමනය</h2>
+                
+                <p>චතුරාර්ය සත්‍යය බුදුන් වහන්සේගේ ඉගැන්වීම්වල හරය වන අතර, සියලු බෞද්ධ දර්ශන මෙම සත්‍ය මත පදනම් වේ. මෙය අවබෝධ කර ගැනීමෙන් මිනිසාට ජීවිතයේ සැබෑ ස්වභාවය හඳුනාගැනීමටත්, මානසික සාමය හා විමුක්තිය කරා යන මාර්ගය අනුගමනය කිරීමටත් හැකියාව ලැබේ.</p>
+                
+                <p>බුදුන් වහන්සේ පෙන්වා දුන් මෙම මාර්ගය අනුගමනය කිරීමෙන් කෙනෙකුට දුක්ඛයෙන් මිදී, නිර්වාණය කරා ළඟා විය හැකි බව සලකන්න.</p>
+            </div>
+            
+            <a href="#" class="back-to-articles">ආපසු ලිපි වෙත</a>
+        </article>
+        
+        <!-- Second Article -->
+        <article id="meditation-daily-life" class="article">
+            <div class="article-header">
+                <h1 class="article-title">දෛනික ජීවිතයට භාවනාව යොදා ගන්නේ කෙසේද?</h1>
+                <div class="article-meta">ප්‍රකාශිත දිනය: 2025 අප්‍රේල් 05 | ලේඛක: ශාන්ති දේවී</div>
+            </div>
+            
+            <div class="article-image" style="background-image: url('/api/placeholder/1000/400');"></div>
+            
+            <div class="article-content">
+                <p>දෛනික ජීවිතයේ අභියෝග මධ්‍යයේ වුවද සිත සමාහිත කර ගැනීමට උපකාරී වන ප්‍රායෝගික භාවනා ක්‍රම පිළිබඳව දැනගනිමු. නූතන ලෝකයේ කාර්යබහුල ජීවිතය තුළ මානසික සුවය ඉහළ නංවා ගැනීමට මෙම ක්‍රමවේද ඔබට උපකාරී වනු ඇත.</p>
+                
+                <h2>භාවනාවේ වැදගත්කම</h2>
+                
+                <p>භාවනාව යනු හුදෙක් මනස සංසුන් කරගැනීමේ ක්‍රියාවලියක් පමණක් නොව, සම්පූර්ණ ජීවිතයටම බලපාන ජීවන රටාවකි. භාවනා කිරීමෙන් ලැබෙන ප්‍රතිලාභ:</p>
+                
+                <ul>
+                    <li>මානසික ඒකාග්‍රතාවය වැඩි දියුණු වීම</li>
+                    <li>ආතතිය අඩු වීම</li>
+                    <li>නින්ද ගුණාත්මකව වැඩි දියුණු වීම</li>
+                    <li>මානසික ශක්තිය ඉහළ යාම</li>
+                    <li>චිත්තවේගී බුද්ධිය වර්ධනය වීම</li>
+                    <li>සතිමත් බව වැඩි දියුණු වීම</li>
+                    <li>ශාරීරික සෞඛ්‍යය වැඩි දියුණු වීම</li>
+                </ul>
+                
+                <h2>සරල භාවනා ක්‍රම</h2>
+                
+                <h3>1. ආනාපානසති භාවනාව (හුස්ම ගැනීම පිළිබඳ සතිමත් භාවය)</h3>
+                
+                <p>මෙය ඉතාම සරල වුවත් ප්‍රබල භාවනා ක්‍රමයකි. දවසේ ඕනෑම වේලාවක, ඕනෑම ස්ථානයක කළ හැකිය.</p>
+                
+                <p><strong>ක්‍රියා පිළිවෙල:</strong></p>
+                <ol>
+                    <li>ආරාමදායක ආසනයක වාඩි වන්න (පුටුවක සිටිය හැකිය)</li>
+                    <li>ඇස් වසා ගන්න හෝ දෑස් අර්ධ වශයෙන් විවෘත කර පහළට බලා සිටින්න</li>
+                    <li>හුස්ම ගැනීම හා පිට කිරීම කෙරෙහි අවධානය යොමු කරන්න</li>
+                    <li>හුස්ම ඇතුළු වන විට සහ පිට වන විට එය දැනෙන ආකාරය අවධානයෙන් නිරීක්ෂණය කරන්න</li>
+                    <li>සිත වෙනත් දෙයක් කරා යනවිට, සෞම්‍යව නැවත හුස්ම කෙරෙහි අවධානය යොමු කරන්න</li>
+                    <li>මිනිත්තු 5-10 මෙලෙස කරන්න</li>
+                </ol>
+                
+                <div class="article-quote">
+                    <p>මෙය රථවාහන තදබදයේදී, පෝලිමේ සිටිනවිට, හෝ වැඩ අතරතුර කුඩා විවේකයක් ලෙස පවා කළ හැකිය.</p>
+                </div>
+                
+                <h3>2. සක්මන් භාවනාව</h3>
+                
+                <p>ඇවිදීමේදී සිත සමාහිත කර ගැනීමේ ක්‍රමයකි. කාර්යබහුල අයට හොඳින් ගැලපේ.</p>
+                
+                <p><strong>ක්‍රියා පිළිවෙල:</strong></p>
+                <ol>
+                    <li>සෙමින් ඇවිදීමට සුදුසු ස්ථානයක් තෝරාගන්න</li>
+                    <li>සෙමින් ගමන් කරන්න</li>
+                    <li>පාද පොළොවේ ස්පර්ශ වන ආකාරය, ශරීරයේ සමතුලිත බව, වාතය ඔබේ සමට දැනෙන ආකාරය ආදිය ගැන සිහිය පවත්වන්න</li>
+                    <li>මිනිත්තු 10-15ක් මෙලෙස ඇවිදින්න</li>
+                </ol>
+                
+                <h3>3. මෙත්තා භාවනාව (මෛත්‍රී භාවනාව)</h3>
+                
+                <p>ආදරය හා කරුණාව වැඩි දියුණු කිරීමේ භාවනාවකි. සතුරු බව හා කේන්තිය අඩු කරයි.</p>
+                
+                <p><strong>ක්‍රියා පිළිවෙල:</strong></p>
+                <ol>
+                    <li>ආරාමදායක ආසනයක වාඩි වන්න</li>
+                    <li>පළමුව තමන් කෙරෙහි මෛත්‍රිය පැතිරවීම: "මම සැනසීමෙන් හා සතුටින් සිටිම්වා, දුකින් තොර වේවා"</li>
+                    <li>පසුව ආදරණීයයන් කෙරෙහි මෛත්‍රිය: "මගේ දෙමව්පියන්/දරුවන්/මිතුරන් සැනසීමෙන් හා සතුටින් සිටිත්වා"</li>
+                    <li>උදාසීන අය කෙරෙහි: "මා දන්නා සියලු දෙනා සැනසීමෙන් හා සතුටින් සිටිත්වා"</li>
+                    <li>සතුරන් කෙරෙහි: "මා සමග අමනාප අය සැනසීමෙන් හා සතුටින් සිටිත්වා"</li>
+                    <li>අවසානයේ සියලු සත්වයන් කෙරෙහි: "සියලු සත්වයෝ සැනසීමෙන් හා සතුටින් සිටිත්වා"</li>
+                </ol>
+                
+                <h2>දෛනික ජීවිතයට භාවනාව ඒකාබද්ධ කිරීමේ උපක්‍රම</h2>
+                
+                <h3>1. දිනපතා නියමිත වේලාවක් වෙන් කරන්න</h3>
+                
+                <p>උදේට නැගිට්ටාම හෝ රාත්‍රියට නිදන්නට පෙර මිනිත්තු 10-15ක් භාවනාව සඳහා වෙන් කරන්න. මෙය පුරුද්දක් ලෙස කිරීමෙන් දිගටම කරගෙන යාමට පහසු වේ.</p>
+          <h3>2. දිනපතා කටයුතු සතිමත් බවින් කරන්න</h3>
+                
+                <p>සාමාන්‍ය දිනපතා කටයුතු සිහි නුවණින් කිරීමට උත්සාහ කරන්න. උදාහරණ ලෙස:</p>
+                
+                <ul>
+                    <li>ආහාර ගන්නා විට ආහාරයේ රසය, සුවඳ, පෝෂණය ගැන සිතමින් සතිමත්ව අනුභව කරන්න</li>
+                    <li>දත් මදින විට, නාන විට, ඇඳුම් අඳින විට එම ක්‍රියා කෙරෙහි සම්පූර්ණ අවධානය යොමු කරන්න</li>
+                    <li>වැඩ කරන විට එම කාර්යය කෙරෙහි සම්පූර්ණ අවධානය යොමු කරන්න</li>
+                    <li>ගමන් කරන විට ගමන ගැන සිහිය පවත්වන්න</li>
+                </ul>
+                
+                <h3>3. "සතිමත් විරාම" භාවිතා කරන්න</h3>
+                
+                <p>දවස පුරා චතුරාරක්ෂාව (mindfulness bells) භාවිතා කරන්න - නිරන්තරයෙන් මතක් කරන සංඥා. උදාහරණ ලෙස:</p>
+                
+                <ul>
+                    <li>දුරකථනය නාද වන සෑම විටම, පිළිතුරු දීමට පෙර හුස්ම ගැනීම් තුනක් සිදු කරන්න</li>
+                    <li>පරිගණකයේ වැඩ කරන අතරතුර සෑම පැයකටම වරක් මිනිත්තු එකක් ගෙන සිය හුස්ම ගැනීම ගැන අවධානය යොමු කරන්න</li>
+                    <li>දොරක් හරහා යන සෑම විටම, ඔබගේ ගමන ගැන සිහි නුවණින් සිටින්න</li>
+                </ul>
+                
+                <h3>4. සතිමත් සවන් දීම පුරුදු කරන්න</h3>
+                
+                <p>අන් අය සමඟ කතාබහ කරන විට ඔවුන්ගේ වචන වලට සම්පූර්ණ අවධානයෙන් සවන් දෙන්න. හුදෙක් පිළිතුරු දීමට සූදානම් වන්නේ නැතිව, අනෙක් පුද්ගලයාගේ වචන, හඬ, සහ ශරීර භාෂාව කෙරෙහි අවධානය යොමු කරන්න.</p>
+                
+                <h3>5. මනස නිරීක්ෂණය කරන්න</h3>
+                
+                <p>දිනය පුරා නිතර නිතර ඔබේ සිතිවිලි හා හැඟීම් නිරීක්ෂණය කිරීමට වේලාව ගන්න. සිතිවිලි හා හැඟීම් විනිශ්චය නොකර, ඒවා පවතින ආකාරයට නිරීක්ෂණය කරන්න. සිතුවිලි හා හැඟීම් ඔබ නොව, ඔබ තුළින් ගලා යන සංසිද්ධි පමණක් බව තේරුම් ගන්න.</p>
+                
+                <h2>භාවනා කිරීමේදී මතු වන බාධක හා විසඳුම්</h2>
+                
+                <h3>1. කාලය නොමැති බව</h3>
+                
+                <p><strong>විසඳුම:</strong> දිනපතා කටයුතු තුළටම භාවනාව ඇතුළත් කරන්න. වාහනයේ ගමන් කරන විට, පෝලිමේ සිටින විට, හෝ හුදෙක් නිවසේ මුළුතැන්ගෙයි කටයුතු කරන විට පවා සතිමත් බව පුහුණු කළ හැකිය.</p>
+                
+                <h3>2. සිත එක තැන නොසිටීම</h3>
+                
+                <p><strong>විසඳුම:</strong> සිත එක තැන නොසිටීම සාමාන්‍ය දෙයකි. එය අසාර්ථක වීමක් නොවේ. සිත වෙනත් දෙයක් කරා යනවිට, නැවත කරුණාවෙන් හා ඉවසීමෙන් හුස්ම හෝ ඔබේ අරමුණ කරා මඟ පෙන්වන්න.</p>
+                
+                <h3>3. අප්‍රසන්න හැඟීම් හෝ සිතුවිලි මතු වීම</h3>
+                
+                <p><strong>විසඳුම:</strong> මේවා තමන්ගේම කොටසක් ලෙස පිළිගන්න. විනිශ්චය නොකර ඒවා නිරීක්ෂණය කර, ඒවා සමඟ සටන් නොකර ගලා යාමට ඉඩ දෙන්න.</p>
+                
+                <h3>4. ප්‍රායෝගික ප්‍රතිඵල නොපෙනීම</h3>
+                
+                <p><strong>විසඳුම:</strong> ඉවසිලිවන්ත වන්න. භාවනාවේ ප්‍රතිඵල දකින්නට යම් කාලයක් ගත විය හැකිය. එය මාරතන් තරඟයක් වැනි දිගුකාලීන ගමනකි, කෙටි දුරක් දිවීමක් නොවේ.</p>
+                
+                <h2>නිගමනය</h2>
+                
+                <p>දිනපතා ජීවිතයට භාවනාව ඒකාබද්ධ කිරීම මගින් මානසික සුවය, ඒකාග්‍රතාවය, හා ජීවිතයේ ගුණාත්මක බව වැඩි දියුණු කළ හැකිය. කුඩා පරිමාණයෙන් ආරම්භ කොට, කාලයාගේ ඇවෑමෙන් වැඩි කාල පරාසයක් භාවනාවට යොදා ගත හැකිය. වැදගත්ම දෙය නම් නිරන්තර පුහුණුවයි.</p>
+                
+                <p>අප තුළ සිටින බුදුන් වහන්සේ සොයාගැනීමට භාවනාව උපකාරී වේවා!</p>
+            </div>
+            
+            <a href="#" class="back-to-articles">ආපසු ලිපි වෙත</a>
+        </article>
+    </div>
+    
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>අප ගැන</h3>
+                <p>බෞද්ධ ධර්මය වෙබ් අඩවිය මගින් බුදුදහමේ මූලික ඉගැන්වීම් සරල ලෙස ඉදිරිපත් කිරීමට උත්සාහ දරයි. අප අරමුණ වන්නේ බුදුදහම ගැන දැනුම පැතිරවීම හා බෞද්ධ ප්‍රජාව එක්සත් කිරීමයි.</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>වේගයෙන් පිවිසෙන්න</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">මුල් පිටුව</a></li>
+                    <li><a href="dharma.html">ධර්මය</a></li>
+                    <li><a href="meditation.html">භාවනා</a></li>
+                    <li><a href="sutras.html">සූත්‍ර</a></li>
+                    <li><a href="qa.html">ප්‍රශ්න සහ පිළිතුරු</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>සම්බන්ධ වන්න</h3>
+                <ul class="footer-links">
+                    <li><a href="contact.html">අප අමතන්න</a></li>
+                    <li><a href="newsletter.html">පුවත් ලිපි</a></li>
+                    <li><a href="donate.html">පරිත්‍යාග</a></li>
+                    <li><a href="volunteer.html">ස්වේච්ඡා සේවය</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>&copy; 2025 බෞද්ධ ධර්මය. සියලුම හිමිකම් ඇවිරිණි.</p>
+        </div>
+    </footer>
+</body>
+</html>
